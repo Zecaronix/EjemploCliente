@@ -18,41 +18,21 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cliente {
+public class Producto {
 
-  /**
-   * Unique identifier for the product.
-   * This field is automatically generated using the IDENTITY strategy.
-   */
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer idProducto;
 
-  /**
-   * Name of the product.
-   * This field is mandatory and has a maximum length of 100 characters.
-   */
   @Column(name = "nombre", nullable = false, length = 100)
   private String nombre;
 
-  /**
-   * Description of the product.
-   * This field is optional and has a maximum length of 255 characters.
-   */
   @Column(name = "descripcion", nullable = true, length = 255)
   private String descripcion;
 
-  /**
-   * Price of the product.
-   * This field is mandatory.
-   */
   @Column(name = "precio", nullable = false)
   private Double precio;
 
-  /**
-   * Stock quantity of the product.
-   * This field is mandatory.
-   */
   @Column(name = "stock", nullable = false)
   private Integer stock;
 }
